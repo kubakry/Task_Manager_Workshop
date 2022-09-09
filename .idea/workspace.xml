@@ -91,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662715760710</updated>
       <workItem from="1662715763488" duration="2364000" />
-      <workItem from="1662718963936" duration="20396000" />
+      <workItem from="1662718963936" duration="23708000" />
     </task>
     <task id="LOCAL-00001" summary="prawie skonfigurowany projekt (bez apachecommons)">
       <created>1662718421301</created>
@@ -128,7 +128,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662739241574</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dwie metody gotowe">
+      <created>1662740482237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662740482237</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dwie metody gotowe">
+      <created>1662740512548</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662740512548</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,5 +153,16 @@
     <MESSAGE value="prawie skonfigurowany projekt (bez apachecommons)" />
     <MESSAGE value="dwie metody gotowe" />
     <option name="LAST_COMMIT_MESSAGE" value="dwie metody gotowe" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/coderslab/Main01.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

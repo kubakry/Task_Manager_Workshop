@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -42,18 +43,19 @@ public class Main01 {
     }
 
     public static void addTask (String fileName) {
-        Scanner scan1 = new Scanner (System.in);
-        System.out.println ("\u001B[37m" + "please put task description");
-        String taskDescription = scan1.next ();
-        System.out.println ("\033[0;33m" + taskDescription);
-        Scanner scan2 = new Scanner (System.in);
-        System.out.println ("\u001B[37m" + "please put task due date");
-        String taskDueDate = scan2.next ();
-        System.out.println ("\033[0;33m" + taskDueDate);
-        Scanner scan3 = new Scanner (System.in);
-        System.out.println ("\u001B[37m" + "is your task important? (y/n)");
-        String taskimportance = scan3.next ();
-        System.out.println ("\033[0;33m" + taskimportance);
+
+        try {
+            Scanner scan = new Scanner (System.in);
+            System.out.println ("\u001B[37m" + "please put task description");
+            String taskDescription = scan.nextLine ();
+            System.out.println ("\033[0;33m" + taskDescription);
+            System.out.println ("\u001B[37m" + "please put task due date");
+            String taskDueDate = scan.nextLine ();
+            System.out.println ("\033[0;33m" + taskDueDate);
+            System.out.println ("\u001B[37m" + "is your task important? (y/n)");
+            String taskimportance = scan.nextLine ();
+            System.out.println ("\033[0;33m" + taskimportance);
+
 
         switch (taskimportance) {
             case "y":
@@ -63,15 +65,12 @@ public class Main01 {
                 taskimportance = "false";
                 break;
         }
+
         String newTaskLine = taskDescription + ", " + taskDueDate + ", " + taskimportance;
-        System.out.println ("\033[0;33m" + "whole line after concatening: " + newTaskLine+"\u001B[37m");
-        try {
-            Writer output;
-            output = new BufferedWriter (new FileWriter (fileName, true));  //clears file every time
-            output.append (newTaskLine);
-            output.close ();
-        } catch (IOException ex) {
-            System.out.println ("Błąd zapisu do pliku.");
+        System.out.println ("\033[0;33m" + "whole line after concatenating: " + newTaskLine+"\u001B[37m");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Niepoprawne dane");
         }
     }
 
@@ -110,9 +109,9 @@ public class Main01 {
             case "exit":
                 exitTask (fileName);
                 break;
-// other options
             default:
                 System.out.println ("Please select a correct option.");
+                scan.close();
 
         }
     }
