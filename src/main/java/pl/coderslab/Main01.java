@@ -9,6 +9,18 @@ public class Main01 {
     public static void main (String[] args) {
         showOptionList ();
         inputTasksFromFile ("tasks.csv");
+        Scanner scan = new Scanner(System.in);
+        String input = scan.next();
+        switch (input) {
+            case "add": addTask();break;
+            case "remove": removeTask();break;
+            case "list": listTask("tasks.csv");break;
+            case "exit": exitTask();break;
+// other options
+            default:
+                System.out.println("Please select a correct option.");
+
+        }
     }
 
     public static void showOptionList () {
@@ -35,8 +47,20 @@ public class Main01 {
             outputTasksArray[i] = tasks.get (i);
         }
         return outputTasksArray;
+    }
+    public static void addTask(){
+
 
     }
+    public static void removeTask(){
 
+    }
+    public static void listTask(String fileName){
+        for (int i = 0; i < inputTasksFromFile (fileName).length; i++) {
+            System.out.println (inputTasksFromFile (fileName)[i]);
+        }
+    }
+    public static void exitTask(){
 
+    }
 }
