@@ -64,7 +64,7 @@ public class Main01 {
                 break;
         }
         String newTaskLine = taskDescription + ", " + taskDueDate + ", " + taskimportance;
-        System.out.println ("\033[0;33m" + "whole line after concatening: " + newTaskLine+"\u001B[37m" + );
+        System.out.println ("\033[0;33m" + "whole line after concatening: " + newTaskLine+"\u001B[37m");
         try {
             Writer output;
             output = new BufferedWriter (new FileWriter (fileName, true));  //clears file every time
